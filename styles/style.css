@@ -72,7 +72,6 @@ ol {
   overflow-x: hidden;
 }
 
-
 .content__list-item:not(:last-child) {
   margin-bottom: 30px;
 }
