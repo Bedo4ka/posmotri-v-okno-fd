@@ -77,6 +77,13 @@ ol {
   margin-bottom: 30px;
 }
 
+.content__list-container {
+  height: 298px;
+  width: 399px;
+  gap: 26px;
+  overflow-y: scroll;
+}
+
 .content__details {
   display: flex;
   flex-direction: column;
@@ -113,13 +120,6 @@ ol {
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
-}
-
-.content__list-container {
-  height: 298px;
-  width: 399px;
-  gap: 26px;
-  overflow-y: scroll;
 }
 
 .search-form {
