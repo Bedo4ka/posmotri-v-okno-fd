@@ -47,7 +47,8 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 711px;
+  inline-size: 711px;
+  block-size: 386px;
   height: 386px;
   margin-top: 66px;
 }
@@ -77,10 +78,11 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   height: 298px;
   width: 399px;
   gap: 26px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .content__details {
@@ -96,11 +98,14 @@ ol {
 }
 
 .content__video-card-title {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
   overflow: hidden;
   text-wrap: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 100%;
 }
 
 .content__video-card-thumbnail {
@@ -114,11 +119,17 @@ ol {
   max-width: 200px;
   font-weight: 400;
   font-size: 18px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-clamp: 4;
+  line-height: 16px;
 }
 
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .search-form {
@@ -136,7 +147,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 18px;
   gap: 5px;
   margin-top: 16px;
@@ -152,10 +163,7 @@ ol {
 
 .search-form__label:hover {
   cursor: pointer;
-}
-
-.search-form__label:focus{
-  outline: none;
+  text-decoration: underline;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -177,6 +185,7 @@ ol {
   font-size: 18px;
   font-style: normal;
   text-decoration: capitalize;
+  appearance:none;
 }
 
 .search-form__textfield:hover {
@@ -224,8 +233,7 @@ ol {
 
 .title {
 width: 259px;
-height: 210px;
-font-weight: 700px;
+font-weight: 700;
 font-size: 75px;
 line-height: 94%;
 text-transform: uppercase;
@@ -233,12 +241,6 @@ text-transform: uppercase;
 
 .content__accent {
 color: #545050;
-}
-
-.content__card-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
 }
 
 .content__card-link {
@@ -291,14 +293,14 @@ color: #545050;
 }
 
 .button {
-  width: 194px;
-  height: 34px;
+  min-height: 34px;
   border: 1px solid white;
   gap: 10px;
   background-color: inherit;
   color: white;
   font-size: 18px;
   font-weight: 700;
+  font-family: "Fira Sans Condensed", sans-serif, Arial;
 }
 
 .button:active {
@@ -321,20 +323,14 @@ color: #545050;
 }
 
 .more-button {
-  background-color: transparent;
-  width: 390px;
-  height: 34px;
+  min-width: 390px;
   margin-top: 30px;
 }
 
 .more-button:focus-visible {
-  display: block;
-  width: 390px;
-  height: 34px;
   border: 4px solid #fff;
-  padding: 3px 134px;
 }
 
-.search-form__submit-button:active {
-  cursor: pointer;
+.search-form__submit-button {
+  min-width: 194px;
 }
